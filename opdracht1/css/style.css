@@ -1,16 +1,124 @@
-html{
-  box-sizing: border-box; /* https://css-tricks.com/box-sizing/ */
-  background:#eee;
-  background: url("../img/flagF4D.png") center no-repeat;
+html {
+    box-sizing: border-box;
+    /* https://css-tricks.com/box-sizing/ */
+    background: #eee;
+    /*  background: url("../img/flagF4D.png") center no-repeat;*/
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
-body{
-  max-width: 30em;
-  margin: 1em auto;
-  padding: 1em;
-  background: #fff;
-  border-radius: 1em;
-  box-shadow: 0.5em 0.5em 0.5em rgba(68,68,68,0.6);
+
+body {
+    max-width: 30em;
+    margin: 1em auto;
+    background: #fff;
+    border-radius: 1em;
+    /*    box-shadow: 0.5em 0.5em 0.5em rgba(68, 68, 68, 0.6);*/
+}
+
+nav {
+    background: rgb(0, 43, 95);
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+nav ul a {
+    /*20px*/
+    margin: 1.25em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'acumin-pro-semi-condensed', sans-serif;
+    /*20px*/
+    font-size: 1.25em;
+    font-weight: bold;
+    background-color: rgb(0, 43, 95);
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    line-height: 32px;
+}
+
+nav ul a:active {
+    color: rgb(246, 217, 0);
+}
+
+nav ul a:focus {
+    border: 1px solid;
+    color: rgb(246, 217, 0);
+}
+
+
+nav ul a:hover {
+    color: rgb(246, 217, 0);
+}
+
+
+
+main {
+    padding: 1em;
+}
+
+
+h1 {
+    content: 1f90d;
+}
+
+h2 {
+    margin-bottom: 2em;
+}
+
+
+.button {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    position: ;
+    left: 0%;
+    margin-top: -45px;
+    margin-left: -50px;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    transition: background 0.5s ease;
+}
+
+.active#heart:before,
+.active#heart:after {
+    background: red !important;
+}
+
+#heart {
+    width: 70px;
+    height: 60px;
+    transition: background 0.5s ease;
+}
+
+#heart:before,
+#heart:after {
+    transition: background 0.5s ease;
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: dimgrey;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
 }
