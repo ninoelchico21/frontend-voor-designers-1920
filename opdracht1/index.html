@@ -6,7 +6,12 @@
     <title>Frontend voor Designer - Opdracht 1</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unicode.org/emoji/charts/full-emoji-list.html#1f5a4">
-    <!--    Bronnen: https://codepen.io/bnewton/pen/KrbLkx-->
+    <!--   Bronnen: https://codepen.io/bnewton/pen/KrbLkx
+    http://www.unicode.org/emoji/charts/full-emoji-list.html
+    https://css-tricks.com/emoji-toggles/
+    -->
+
+
 </head>
 
 <body>
@@ -15,34 +20,71 @@
             <ul>
                 <li><a href="index.html">Movies</a></li>
                 <li><a href="hearts.html">Hearts</a></li>
+                <span class="heart-item"></span>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h1>Movies</h1>
-        <img src="img/matrix_the_1999.jpg" alt="The matrix movie poster">
-        <h2>The Matrix 1999</h2>
-        <div id='heart' class='button'></div>
-        🖤
+        <h1>Movies🎞</h1>
+        <img src="img/matrix_the_1999.jpg" class="posterimg" alt="The matrix movie poster">
+        <div class="containerh2enhart">
+            <h2>The Matrix 1999</h2>
+            <div class="emoji-toggle emoji-heart">
+                <input type="checkbox" id="toggle1" class="toggle">
+                <div class="emoji"></div>
+                <label for="toggle" class="well"></label>
+            </div>
+        </div>
 
-        <img src="img/scary_movie_5.jpg" alt="Scary movie 5 movie poster">
-        <h2>Scary movie 5</h2>
-        🖤
 
-        <img src="img/wall-e_2008.jpg" alt="Wall-E movie poster">
-        <h2>Wall-E 2008</h2>
-        🖤
+        <img src="img/scary_movie_5.jpg" class="posterimg" alt="Scary movie 5 movie poster">
+        <div class="containerh2enhart">
+            <h2>Scary movie 5</h2>
+            <div class="emoji-toggle emoji-heart">
+                <input type="checkbox" id="toggle2" class="toggle">
+                <div class="emoji"></div>
+                <label for="toggle" class="well"></label>
+            </div>
+        </div>
 
-        <img src="img/shutter-island.jpg" alt="Shutters Island movie poster">
-        <h2>Shutters Island</h2>
-        🖤
 
-        <img src="img/x-men_the_last_stand.jpg" alt="X-men the last stand movie poster">
-        <h2>X-men: The Last Stand</h2>
-        🖤
+        <img src="img/wall-e_2008.jpg" class="posterimg" alt="Wall-E movie poster">
+        <div class="containerh2enhart">
+            <h2>Wall-E 2008</h2>
+            <div class="emoji-toggle emoji-heart">
+                <input type="checkbox" id="toggle3" class="toggle">
+                <div class="emoji"></div>
+                <label for="toggle" class="well"></label>
+            </div>
+        </div>
+
+
+        <img src="img/shutter-island.jpg" class="posterimg" alt="Shutters Island movie poster">
+        <div class="containerh2enhart">
+            <h2>Shutters Island</h2>
+            <div class="emoji-toggle emoji-heart">
+                <input type="checkbox" id="toggle4" class="toggle">
+                <div class="emoji"></div>
+                <label for="toggle" class="well"></label>
+            </div>
+        </div>
+
+        <img src="img/x-men_the_last_stand.jpg" class="posterimg" alt="X-men the last stand movie poster">
+        <div class="containerh2enhart">
+            <h2>X-men: The Last Stand</h2>
+            <div class="emoji-toggle emoji-heart">
+                <input type="checkbox" id="toggle5" class="toggle">
+                <div class="emoji"></div>
+                <label for="toggle" class="well"></label>
+            </div>
+        </div>
+
 
 
     </main>
 
     <script src="js/script.js" type="text/javascript"></script>
-</body></html>
+</body>
+
+</html>
