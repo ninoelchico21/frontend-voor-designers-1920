@@ -21,24 +21,42 @@
 
 
 
-// Variabelen opstellen: select the HTML elements which you want to manipulate
+// Variabelen opstellen: Hier selecteer ik de nav item hearts en de svg hart.
 var navHart = document.getElementById('navlinkhart');
 var blackHart = document.getElementsByClassName('blackhearts');
+var redHart = document.getElementsByClassName('redhart');
+var filmPosters = document.getElementsByClassName('film');
+var filmTitel;
 
+
+
+// Hier check ik in de console of de eerste naam van de film is aangesproken
 console.log(blackHart[0]);
 
-
+// Hier check ik in de console of de svg is aangesproken
 console.log(navHart);
 
 
 
-// Hier hang ik een oortje aan de ... die checkt of er een klik plaatsvind.
-// Bij een click wordt de functie verzinfunctie gerunned.
+// Hier hang ik een oortje aan de nav item hearts die checkt of er een klik plaatsvind
+// Hetzelfde geldt voor de svg blackheart
+// Bij een click op de navHart wordt de functie showLiked gerunned.
+// Bij een click op de blackHart wordt de functie blackheartClicked gerunned.
 navHart.addEventListener('click', showLiked);
 blackHart[0].addEventListener('click', blackheartClicked);
 
+
+// Hier zet ik de blackheart in een loop
 for (i = 0; i < blackHart.length; i++) {
     blackHart[i].addEventListener('click', blackheartClicked);
+}
+
+
+// Deze functie toggled de classes .blackhearts en .redhart Deze kun je in css vinden.
+// In a function, this refers to the global object.
+function blackheartClicked() {
+    console.log(this);
+    this.classList.toggle('redhart');
 }
 
 
@@ -46,9 +64,12 @@ for (i = 0; i < blackHart.length; i++) {
 function showLiked() {
     console.log("werkt");
 
-}
+    if (blackHart = this.classList.toggle('redhart')) {
+        filmTitel = document.getElementsByClassName('filmentitel');
+        filmTitel.classList.add('heartsshowed');
+    } else {
+        filmTitel = document.getElementsByClassName('filmentitel');
+        filmTitel.classList.add('hiddenhearts');
+    }
 
-function blackheartClicked() {
-    console.log(this);
-    this.classList.toggle('redhart');
 }
