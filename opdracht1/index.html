@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Frontend voor Designer - Opdracht 1</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unicode.org/emoji/charts/full-emoji-list.html#1f5a4">
     <!--   Bronnen: https://codepen.io/bnewton/pen/KrbLkx
     http://www.unicode.org/emoji/charts/full-emoji-list.html
     https://css-tricks.com/emoji-toggles/
@@ -18,68 +17,55 @@
     <header>
         <nav class="navigation">
             <ul>
-                <li><a href="index.html">Movies</a></li>
-                <li><a href="hearts.html">Hearts</a></li>
-                <span class="heart-item"></span>
+                <li>Movies</li>
+                <li id="navlinkhart">Hearts</li>
             </ul>
         </nav>
     </header>
 
     <main>
         <h1>Movies🎞</h1>
+        <p class='tekstonderh1'>Ontdek films en voeg de leuke toe door ze te harten.</p>
+
+
         <img src="img/matrix_the_1999.jpg" class="posterimg" alt="The matrix movie poster">
-        <div class="containerh2enhart">
-            <h2>The Matrix 1999</h2>
-            <div class="emoji-toggle emoji-heart">
-                <input type="checkbox" id="toggle1" class="toggle">
-                <div class="emoji"></div>
-                <label for="toggle" class="well"></label>
-            </div>
-        </div>
+        <h2>The Matrix 1999</h2>
+        <svg class='blackhearts' xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px">
+            <title>heart2</title>
+            <path d="M100,33v4.47c-0.07.3-.15,0.61-0.2,0.92a37.38,37.38,0,0,1-4.68,13.88A65,65,0,0,1,88,61.84,115,115,0,0,1,77,72.85c-3.59,3.12-7.24,6.18-11,9-5,3.76-10.2,7.29-15.3,10.94a0.92,0.92,0,0,1-1.22,0c-4.49-3.16-9.1-6.18-13.47-9.51-4.6-3.51-9-7.22-13.44-11a97.46,97.46,0,0,1-15-16,37.85,37.85,0,0,1-6.76-15C0.46,40,.23,38.83,0,37.61V33c0.06-.26.11-0.51,0.17-0.77,0.44-2,.72-4,1.35-6A27.25,27.25,0,0,1,14.26,10.68,27.31,27.31,0,0,1,33,7.41a27.52,27.52,0,0,1,16.2,9,5.33,5.33,0,0,1,.53.9c1.09-1.09,1.9-1.93,2.75-2.72a28.18,28.18,0,0,1,38.34-.13,27.63,27.63,0,0,1,8.25,13.84C99.51,29.83,99.71,31.41,100,33Z" />
+        </svg>
 
 
         <img src="img/scary_movie_5.jpg" class="posterimg" alt="Scary movie 5 movie poster">
-        <div class="containerh2enhart">
-            <h2>Scary movie 5</h2>
-            <div class="emoji-toggle emoji-heart">
-                <input type="checkbox" id="toggle2" class="toggle">
-                <div class="emoji"></div>
-                <label for="toggle" class="well"></label>
-            </div>
-        </div>
+        <h2>Scary movie 5</h2>
+        <svg class='blackhearts' xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px">
+            <title>heart2</title>
+            <path d="M100,33v4.47c-0.07.3-.15,0.61-0.2,0.92a37.38,37.38,0,0,1-4.68,13.88A65,65,0,0,1,88,61.84,115,115,0,0,1,77,72.85c-3.59,3.12-7.24,6.18-11,9-5,3.76-10.2,7.29-15.3,10.94a0.92,0.92,0,0,1-1.22,0c-4.49-3.16-9.1-6.18-13.47-9.51-4.6-3.51-9-7.22-13.44-11a97.46,97.46,0,0,1-15-16,37.85,37.85,0,0,1-6.76-15C0.46,40,.23,38.83,0,37.61V33c0.06-.26.11-0.51,0.17-0.77,0.44-2,.72-4,1.35-6A27.25,27.25,0,0,1,14.26,10.68,27.31,27.31,0,0,1,33,7.41a27.52,27.52,0,0,1,16.2,9,5.33,5.33,0,0,1,.53.9c1.09-1.09,1.9-1.93,2.75-2.72a28.18,28.18,0,0,1,38.34-.13,27.63,27.63,0,0,1,8.25,13.84C99.51,29.83,99.71,31.41,100,33Z" />
+        </svg>
+
 
 
         <img src="img/wall-e_2008.jpg" class="posterimg" alt="Wall-E movie poster">
-        <div class="containerh2enhart">
-            <h2>Wall-E 2008</h2>
-            <div class="emoji-toggle emoji-heart">
-                <input type="checkbox" id="toggle3" class="toggle">
-                <div class="emoji"></div>
-                <label for="toggle" class="well"></label>
-            </div>
-        </div>
+        <h2>Wall-E 2008</h2>
+        <svg class='blackhearts' xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px">
+            <title>heart2</title>
+            <path d="M100,33v4.47c-0.07.3-.15,0.61-0.2,0.92a37.38,37.38,0,0,1-4.68,13.88A65,65,0,0,1,88,61.84,115,115,0,0,1,77,72.85c-3.59,3.12-7.24,6.18-11,9-5,3.76-10.2,7.29-15.3,10.94a0.92,0.92,0,0,1-1.22,0c-4.49-3.16-9.1-6.18-13.47-9.51-4.6-3.51-9-7.22-13.44-11a97.46,97.46,0,0,1-15-16,37.85,37.85,0,0,1-6.76-15C0.46,40,.23,38.83,0,37.61V33c0.06-.26.11-0.51,0.17-0.77,0.44-2,.72-4,1.35-6A27.25,27.25,0,0,1,14.26,10.68,27.31,27.31,0,0,1,33,7.41a27.52,27.52,0,0,1,16.2,9,5.33,5.33,0,0,1,.53.9c1.09-1.09,1.9-1.93,2.75-2.72a28.18,28.18,0,0,1,38.34-.13,27.63,27.63,0,0,1,8.25,13.84C99.51,29.83,99.71,31.41,100,33Z" />
+        </svg>
 
 
         <img src="img/shutter-island.jpg" class="posterimg" alt="Shutters Island movie poster">
-        <div class="containerh2enhart">
-            <h2>Shutters Island</h2>
-            <div class="emoji-toggle emoji-heart">
-                <input type="checkbox" id="toggle4" class="toggle">
-                <div class="emoji"></div>
-                <label for="toggle" class="well"></label>
-            </div>
-        </div>
+        <h2>Shutters Island</h2>
+        <svg class='blackhearts' xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px">
+            <title>heart2</title>
+            <path d="M100,33v4.47c-0.07.3-.15,0.61-0.2,0.92a37.38,37.38,0,0,1-4.68,13.88A65,65,0,0,1,88,61.84,115,115,0,0,1,77,72.85c-3.59,3.12-7.24,6.18-11,9-5,3.76-10.2,7.29-15.3,10.94a0.92,0.92,0,0,1-1.22,0c-4.49-3.16-9.1-6.18-13.47-9.51-4.6-3.51-9-7.22-13.44-11a97.46,97.46,0,0,1-15-16,37.85,37.85,0,0,1-6.76-15C0.46,40,.23,38.83,0,37.61V33c0.06-.26.11-0.51,0.17-0.77,0.44-2,.72-4,1.35-6A27.25,27.25,0,0,1,14.26,10.68,27.31,27.31,0,0,1,33,7.41a27.52,27.52,0,0,1,16.2,9,5.33,5.33,0,0,1,.53.9c1.09-1.09,1.9-1.93,2.75-2.72a28.18,28.18,0,0,1,38.34-.13,27.63,27.63,0,0,1,8.25,13.84C99.51,29.83,99.71,31.41,100,33Z" />
+        </svg>
 
         <img src="img/x-men_the_last_stand.jpg" class="posterimg" alt="X-men the last stand movie poster">
-        <div class="containerh2enhart">
-            <h2>X-men: The Last Stand</h2>
-            <div class="emoji-toggle emoji-heart">
-                <input type="checkbox" id="toggle5" class="toggle">
-                <div class="emoji"></div>
-                <label for="toggle" class="well"></label>
-            </div>
-        </div>
-
+        <h2>X-men: The Last Stand</h2>
+        <svg class='blackhearts' xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px">
+            <title>heart2</title>
+            <path d="M100,33v4.47c-0.07.3-.15,0.61-0.2,0.92a37.38,37.38,0,0,1-4.68,13.88A65,65,0,0,1,88,61.84,115,115,0,0,1,77,72.85c-3.59,3.12-7.24,6.18-11,9-5,3.76-10.2,7.29-15.3,10.94a0.92,0.92,0,0,1-1.22,0c-4.49-3.16-9.1-6.18-13.47-9.51-4.6-3.51-9-7.22-13.44-11a97.46,97.46,0,0,1-15-16,37.85,37.85,0,0,1-6.76-15C0.46,40,.23,38.83,0,37.61V33c0.06-.26.11-0.51,0.17-0.77,0.44-2,.72-4,1.35-6A27.25,27.25,0,0,1,14.26,10.68,27.31,27.31,0,0,1,33,7.41a27.52,27.52,0,0,1,16.2,9,5.33,5.33,0,0,1,.53.9c1.09-1.09,1.9-1.93,2.75-2.72a28.18,28.18,0,0,1,38.34-.13,27.63,27.63,0,0,1,8.25,13.84C99.51,29.83,99.71,31.41,100,33Z" />
+        </svg>
 
 
     </main>

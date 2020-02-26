@@ -2,7 +2,6 @@ html {
     box-sizing: border-box;
     /* https://css-tricks.com/box-sizing/ */
     background: #eee;
-    /*  background: url("../img/flagF4D.png") center no-repeat;*/
 }
 
 *,
@@ -11,17 +10,27 @@ html {
     box-sizing: inherit;
 }
 
+
+
+/************************************************
+                        BODY
+*************************************************/
+
 body {
     max-width: 30em;
     margin: 1em auto;
     background: #fff;
     border-radius: 1em;
-    /*    box-shadow: 0.5em 0.5em 0.5em rgba(68, 68, 68, 0.6);*/
 }
 
+
+/************************************************
+                        NAV
+*************************************************/
+
 nav {
+    position: fixed;
     background: rgb(0, 43, 95);
-    width: 100%;
 }
 
 nav ul {
@@ -63,62 +72,179 @@ nav ul a:hover {
 
 
 
+
+/************************************************
+                        MAIN
+*************************************************/
+
 main {
     padding: 1em;
 }
 
 
+
+/************************************************
+                        TEKST
+*************************************************/
+
 h1 {
-    content: 1f90d;
+    font-family: 'acumin-pro-condensed', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+    margin-top: 3.0em;
 }
 
 h2 {
-    margin-bottom: 2em;
+    font-family: 'acumin-pro-condensed', sans-serif;
+    margin-bottom: 2.3em;
+    margin-top: 20px;
+    width: 100%;
+}
+
+p {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tekstonderh1 {
+    font-size: 16px;
+    font-family: 'calibri', sans-serif;
 }
 
 
-.button {
-    width: 30px;
-    height: 30px;
-    top: 50%;
-    position: ;
-    left: 0%;
-    margin-top: -45px;
-    margin-left: -50px;
-    border-radius: 5px;
-    background: none;
+
+
+/************************************************
+                        IMG
+*************************************************/
+
+
+.posterimg {
+    width: 100%;
+}
+
+
+/************************************************
+                   div
+*************************************************/
+.containerh2enhart {
+    display: flex;
+}
+
+
+
+/************************************************
+                   HEART TOGGLE
+*************************************************/
+
+
+.blackhearts {
+    width: 20%;
+    height: 20%;
+}
+
+.redhart {
+    fill: red;
+}
+
+/*
+
+.emoji-toggle {
+    position: relative;
+    width: 60px;
+    margin: 25px auto;
+}
+
+.emoji-toggle .well {
+    display: block;
+    background: #eee;
+    height: 20px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.5s ease;
 }
 
-.active#heart:before,
-.active#heart:after {
-    background: red !important;
-}
-
-#heart {
-    width: 70px;
-    height: 60px;
-    transition: background 0.5s ease;
-}
-
-#heart:before,
-#heart:after {
-    transition: background 0.5s ease;
+.emoji-toggle .toggle {
+    opacity: 0;
+    border: 0;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    background: transparent;
     position: absolute;
-    content: "";
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background: dimgrey;
-    border-radius: 50px 50px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
+    cursor: pointer;
+    z-index: 100;
 }
 
-#heart:after {
+.emoji-toggle .toggle ~ .emoji:before {
+    content: "🖤";
+    position: absolute;
     left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+    top: -15px;
+    font-size: 40px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
 }
+
+.emoji-toggle .toggle:checked ~ .emoji:before {
+    left: 100%;
+    margin-left: -1em;
+
+}
+
+.emoji-toggle .toggle ~ label {
+    white-space: nowrap;
+}
+
+.emoji-toggle .toggle ~ label:before {
+    position: absolute;
+    right: 100%;
+    margin-right: 5px;
+    top: 0;
+}
+
+.emoji-toggle .toggle ~ label:after {
+    position: absolute;
+    left: 100%;
+    margin-left: 5px;
+    top: 0;
+}
+
+.emoji-heart .toggle ~ .emoji:before {
+    content: "🖤";
+}
+
+.emoji-heart .toggle:checked ~ .emoji:before {
+    content: "❤️";
+}
+
+.heart-item {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: -10px;
+    right: -10px;
+}
+
+&:before {
+    content: '1';
+    display: block;
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #2bd156;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.heart-item.active {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    top: 22px;
+    right: 335px;
+}
+*/
