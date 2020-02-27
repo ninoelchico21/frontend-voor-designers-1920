@@ -26,7 +26,7 @@ var navHart = document.getElementById('navlinkhart');
 var blackHart = document.getElementsByClassName('blackhearts');
 var redHart = document.getElementsByClassName('redhart');
 var filmPosters = document.getElementsByClassName('film');
-var filmTitel;
+var filmTitel
 
 
 

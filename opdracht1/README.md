@@ -10,40 +10,40 @@ Het idee dat ik had gekozen was een mobiele scherm waarop je films onder elkaar 
 ## Eerste versie film:
 In de eerste versie van mijn ontwerp heb ik de filmposters geplaatst en ben ik vooral bezig geweest met het **positioneren** van dingen en met de margins paddings etc. Verder ben ik gaan kijken naar mijn **'heart' button**. Zoals je hieronder kunt zien zat ik nog te twijfelen over een emoji of een div.
 
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-1-(1/6).png "Versie 1 (1/6)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-1-(2/6).png "Versie 1 (2/6)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-1-(3/6).png "Versie 1 (3/6)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-1-(4/6).png "Versie 1 (4/6)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-1-(5/6).png "Versie 1 (5/6)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-1-(6/6).png "Versie 1 (6/6)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie11van6.png "Versie 1 (1/6)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie12van6.png "Versie 1 (2/6)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie13van6.png "Versie 1 (3/6)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie14van6.png "Versie 1 (4/6)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie15van6.png "Versie 1 (5/6)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie16van6.png "Versie 1 (6/6)")
 
 
 
 ## Tweede versie film:
 In de tweede versie heb ik vooral de **css** aangepast. Ik heb de keuze gemaakt om de heart button op een unieke wijze te maken: namelijk als **toggle button**. Onder elke filmposter zie je deze staan. Je kunt hem toggelen van een zwart hartje naar een rood hartje. Verder heb ik een klein beginnetje gemaakt aan de javascript door de basics variabele-eventlistener-function erin te plaatsen. Het is nog een placeholder zegmaar. Tot slot heb ik ook nog een beginnetje gemaakt aan mijn 'hearts' pagina, waarbij je de gehartte films kunt 'terugvinden'
 
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-2-(1/5).png "Versie 2 (1/5)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-2-(2/5).png "Versie 2 (2/5)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-2-(3/5).png "Versie 2 (3/5)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-2-(4/5).png "Versie 2 (4/5)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-2-(5/5).png "Versie 2 (5/5)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie21van5.png "Versie 2 (1/5)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie22van5.png "Versie 2 (2/5)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie23van5.png "Versie 2 (3/5)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie24van5.png "Versie 2 (4/5)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie25van5.png "Versie 2 (5/5)")
 
 
 
 ## Derde versie (na feedback) versie:
 In deze versie heb ik mijn ontwerp het meest aangepast. Ik heb de harttogglebuttons helaas moeten weggooien uit mijn site. Het positieve was dat ik nu een grote slag heb geslagen met de **javascript**. Met behulp van Jamie heb ik met **svg'tjes** een nieuwe hart button kunnen coderen. De iteratieslag heeft er ook voor gezorgt dat mijn css een zooitje is, maar dat ga ik nog aanpassen. Tot slot heb ik mijn **'hearts' pagina** ook moeten verwijderen, omdat het handiger voor mij was als ik de gehartte films zou filteren. Dit moet ik nog wel doen.
 
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-3-(1/3).png "Versie 3 (1/3)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/readmeimg/opdracht-1-versie-3-(2/3).png "Versie 3 (2/3)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-versie-3-(3/3).png "Versie 3 (3/3)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie31van3.png "Versie 3 (1/3)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/readmeimg/opdracht1versie32van3.png "Versie 3 (2/3)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie33van3.png "Versie 3 (3/3)")
 
 
 ## Final versie:
 In de Final versie heb ik meerdere malen geprobeert om ervoor te zorgen dat mijn gehartte films te filteren wanneer ik op het menu item 'hearts' klik. Dit is mij helaas niet gelukt. Het lastige was vooral het verbinden van het rode hartje met de filmposter en titel. Waarschijnlijk heb ik er iets te moeilijk over nagedacht. Verder ben ik gaan werken aan de feedback door iets meer **hierarchie** toe te voegen door de **lettergroottes en spatiëringen** aan te passen. Ook ben ik gaan kijken hoe ik het begip *keep users in control*  kan toepassen. Dit heb ik geprobeert door bovenaan de pagina een melding te tonen met uitleg over de site/heartbutton en door een mini reminder te geven bij de heartbutton zelf. Tot slot heb ik de css een beetje aangepast en is het mij gelukt om de nav volledig te fiksen.
 
 
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-finallversie-(1/2).png "Final versie (1/2)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht-1-finallversie-(2/2).png "Final versie (2/2)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1finalversie1van2.png "Final versie (1/2)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1finalversie2van2.png "Final versie (2/2)")
 
 
 ## Feedback formulier:
