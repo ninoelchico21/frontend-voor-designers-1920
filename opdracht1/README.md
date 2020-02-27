@@ -51,6 +51,7 @@ In de Final versie heb ik meerdere malen geprobeert om ervoor te zorgen dat mijn
 
 
 
+
 ## Code dat niet was gelukt uiteindelijk:
 
 ### 1.) css: wel gelukt, maar niet te manipuleren met js
