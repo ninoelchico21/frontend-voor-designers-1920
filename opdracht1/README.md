@@ -34,7 +34,7 @@ In de tweede versie heb ik vooral de **css** aangepast. Ik heb de keuze gemaakt 
 In deze versie heb ik mijn ontwerp het meest aangepast. Ik heb de harttogglebuttons helaas moeten weggooien uit mijn site. Het positieve was dat ik nu een grote slag heb geslagen met de **javascript**. Met behulp van Jamie heb ik met **svg'tjes** een nieuwe hart button kunnen coderen. De iteratieslag heeft er ook voor gezorgt dat mijn css een zooitje is, maar dat ga ik nog aanpassen. Tot slot heb ik mijn **'hearts' pagina** ook moeten verwijderen, omdat het handiger voor mij was als ik de gehartte films zou filteren. Dit moet ik nog wel doen.
 
 ![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie31van3.png "Versie 3 (1/3)")
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/readmeimg/opdracht1versie32van3.png "Versie 3 (2/3)")
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie32van3.png "Versie 3 (2/3)")
 ![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1versie33van3.png "Versie 3 (3/3)")
 
 
@@ -42,7 +42,7 @@ In deze versie heb ik mijn ontwerp het meest aangepast. Ik heb de harttogglebutt
 In de Final versie heb ik meerdere malen geprobeert om ervoor te zorgen dat mijn gehartte films te filteren wanneer ik op het menu item 'hearts' klik. Dit is mij helaas niet gelukt. Het lastige was vooral het verbinden van het rode hartje met de filmposter en titel. Waarschijnlijk heb ik er iets te moeilijk over nagedacht. Verder ben ik gaan werken aan de feedback door iets meer **hierarchie** toe te voegen door de **lettergroottes en spatiëringen** aan te passen. Ook ben ik gaan kijken hoe ik het begip *keep users in control*  kan toepassen. Dit heb ik geprobeert door bovenaan de pagina een melding te tonen met uitleg over de site/heartbutton en door een mini reminder te geven bij de heartbutton zelf. Tot slot heb ik de css een beetje aangepast en is het mij gelukt om de nav volledig te fiksen.
 
 
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1finalversie1van2.png "Final versie (1/2)")
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht1/readmeimg/opdracht1finalversie1van2.png "Final versie (1/2)")
 ![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht1/readmeimg/opdracht1finalversie2van2.png "Final versie (2/2)")
 
 
