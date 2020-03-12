@@ -1,34 +1,74 @@
-# Frontend voor Designers - opdracht 2: Een interactie uitwerken voor verschillende gebruikers input
+# Procesverslag Frontend voor Designers Opdracht 2
 
-Werk een functionaliteit uit die je kunt bedienen met 'click' en nog een user interactie, zoals het toetsenbord, tab, dubbel click, swipe, long press, <del>force touch</del>, of iets anders ... Werk je ontwerp uit in HTML, CSS en Javascript om te kunnen testen in een [browser](https://en.m.wikipedia.org/wiki/List_of_web_browsers).
+## Schets idee:
+Het idee dat ik had gekozen was een carousel waarmee je van links naar recht kunt swipen en klikken. Verder hoopte ik dat ik het in een rondje kon krijgen of met een 3d effect zou kunnen creëren.
 
-
-## Werkwijze
-Bedenk een functionaliteit die je op meerdere manieren kunt bedienen. Schets eerst hoe de functionaliteit er uit komt te zien. Maak daarna een breakdown-schets van hoe de verschillende elementen technisch moeten gaan werken...
-
-Codeer de functionaliteit in HTML,CSS en JavaScript en test verschillende versies van je ontwerp in een browser.
-
-## Planning
-1. Les 3: Briefing opdracht 2 en beginnen met schetsen en coderen
-2. Les 4: Eerste versie testen
-2. Les 5: Oplevering en beoordeling
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht2/readmeimg/schets.jpg "Carousel schetsen")
 
 
-## Voorbeeld functionaliteit die je kunt maken
-- Carousel met vakantiefoto's: Een carousel met meerdere foto's van een vakantie, die je kan bedienen met een button en met de pijltjes op het toetsenbord.
-- Portfolio website met meerdere projecten en een biografie. Als je naar 'beneden' scrollt vult de betreffende section zich met informatie. Als je op tab klikt ga je ook naar de volgende section. Of als je 'volgende' roept ...
-- Settings panel op een foto-overzichtpagina: Instellingen zijn bijvoorbeeld de font-grootte, night vision en het aantal kolommen die naast elkaar worden getoond. Het bedienen van de instellingen moet met de muis en de sneltoetsen op het toetsenbord.
-- Je mag ook een eigen idee uitwerken. Kom dan eerst even overleggen.
+
+## Eerste versie film:
+In de eerste versie van mijn ontwerp heb ik de **afbeeldingen van de carousel** in de html geplaatst. Ik zat vooral met de grootes en de positie van de afbeeldingen. Vervolgens ben ik de **pijltjes** gaan toevoegen die png'tjes zijn.
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht2/readmeimg/versie1.png "Carousel versie 1")
+
+## Tweede versie film:
+In de tweede versie van mijn ontwerp ben ik de carousel gaan maken. Zoals je kunt zien hebben de paddings kleuren gekregen om het makelijker te maken voor mezelf. Vervolgens zijn de **navigatie bolletjes** onderin gemaakt. Met **li** tjes zijn de bolletjes gestyled. De bolletjes linken naar de afbeeldingen, zodat de juiste afbeelding wordt geshowed wanneer er op een nav bolletje wordt geklikt. Verder zijn de 'vorige' en 'volgende' knoppen aan de carousel toegevoegd. Tot slot is er js toegevoegd, om ervoor te zorgen dat de nav bolletjes feedback geven aan de gebruiker wanneer er op een bolletje geklikt wordt.
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht2/readmeimg/versie2.png "Carousel versie 2")
 
 
-## Criteria
+## Derde versie film:
+In de derde versie van de mijn ontwerp heb ik de carousel **klikbaar** gemaakt met js. Nu kan de gebruiker door de afbeeldingen heen en terug klikken. Met functions, eventlisteners en if/else statements met true/false conditions heb ik met behulp van medestudent **Sebastiaan**  ervoor kunnen zorgen dat je van de eerste tot laatste afbeelding en andersom, kunt klikken. Verder heb ik de styling iets aangepast, vond  de kleurenpadding wel een leuk idee voor de kleuren van Aruba. Ik noem het: **De Arusel**.
 
-1. In de demo maak je gebruik van verschillende [User Interface events](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent).
-2.In de demo dien je rekening te houden met de interface design principles 04, 08 & 09 van [Principles of User Interface Design](http://bokardo.com/principles-of-user-interface-design/).
-3. Je ontwerp is aantoonbaar getest en verbeterd. Verslaglegging en resultaat publiceren op Github. <br>Voeg ook je breakdown-schets toe, en beschrijf je eerste idee en technische opzet en hoe het uiteindelijk is geworden.
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht2/readmeimg/versie2.png "Carousel versie 3")
 
 
-## Resources
-- Bekijk hier de lijst [User Interface Events](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) die je in javascript kunt gebruiken.
-- Als je iets wil doen met scrollen, dan kun je het event 'scroll' gebruiken. Misschien kun je ook iets doen met de [Intersection observer](https://pawelgrzybek.com/the-intersection-observer-api-explained/)
-- Als een onderdeel van je pagina in beeld moet verschijnen na een click, dan kun je iets doen met [scrollIntoView](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView).
+## Feedback formulier:
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht3/readmeimg/feedback.jpg "Feedback formulier opdracht 2")
+
+
+## Code dat niet was gelukt uiteindelijk:
+
+### 1.) js: het klikkbaar maken van de carousel lukte met deze code helaas niet.
+//Snapte het niet meer, omdat er in de console een error stond dat 'vorigeKnop' geen eventlistener is.
+//Verder makakte deze codes de forloop van de navbolletjes kapot.
+
+
+**poging 1**
+ document.getElementByClassName("vorige").onclick = vorigeBol(){
+    bolletje[i]--;
+};
+function vorigeKnop(){
+    document.getElementsByClassName("vorige");
+    this.onclick();
+    bolletje[i]--;
+}
+
+
+**poging 2**
+   function vorigeKnop() {
+   document.getElementsByClassName("vorige");
+   this.onclick();
+   bolletje[i]--;
+    }
+
+document.getElementsByClassName("vorige").addEventListener('click', vorigeKnop);
+}
+
+
+**poging 3**
+var i = 0;
+
+function vorigeBol(){
+i--;
+}
+function volgendeBol(){
+i++;
+}
+
+var vorigeKnop = document.getElementByClassName("vorige").onclick = vorigeBol()
+vorigeKnop.addEventListener('click', vorigeBol);
+volgendeKnop.addEventListener('click', volgendeBol);
+
+

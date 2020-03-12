@@ -6,22 +6,28 @@
     padding: 0;
 }
 
+body {
+    background-color: rgb(1, 128, 189);
+}
+
 h1 {
+    font-family: 'Sen', sans-serif;
     text-align: center;
+    color: white;
     margin: 20px;
 }
 
 .carousel {
     position: relative;
     padding: 1em;
-    background: red;
+    background: rgb(245, 211, 65);
 }
 
 .carousel ul {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding: 1em;
-    background: gold;
+    background: rgb(238, 62, 64);
     margin: 0;
     list-style: none;
 
@@ -34,11 +40,11 @@ h1 {
 .carousel > ul li {
     scroll-snap-align: center;
     padding: 1em;
-    background-color: green;
+    background-color: white;
 }
 
 .carousel ul li img {
-    height: 25em;
+    height: 28em;
 }
 
 .carousel button {
@@ -48,34 +54,32 @@ h1 {
 
     top: calc(50% - 2em);
     font-size: 1em;
-    background: purple;
+    background: rgb(1, 161, 219);
+
     border: none;
     border-radius: 50%;
+}
+
+.carousel button:focus {
+    box-shadow: 0 0 .25em .25em white;
+    outline: none;
 }
 
 .carousel button.vorige {
     left: 1em;
 }
 
+
 .carousel button.volgende {
     right: 1em;
 }
 
-/*
-.carousel nav ul li {
-    width: 2rem;
-    height: 2rem;
-    margin-left: 3px;
-    background-color: blue;
-    border-radius: 50%;
-}
-*/
 
 .bol {
     width: 2rem;
     height: 2rem;
     margin-left: 3px;
-    background-color: blue;
+    background-color: white;
     border-radius: 50%;
 }
 
@@ -85,42 +89,6 @@ h1 {
 
 
 .zwart {
-    background-color: black;
-    color: black;
+    background-color: rgb(245, 211, 65);
+    color: rgb(245, 211, 65);
 }
-
-/*
-.fotos {
-    padding: 0px 12px;
-    width: 500px;
-    height: 372px;
-}
-
-.items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-top: 100px;
-
-}
-
-.vorige {
-    position: absolute;
-    top: 0;
-    display: block;
-    width: 50px;
-    height: 100%;
-    background: url("../img/next.png") 50% 50% / 40px no-repeat;
-    left: 0;
-    transform: rotate(180deg);
-}
-
-.volgende {
-    position: absolute;
-    top: 0;
-    display: block;
-    width: 50px;
-    height: 100%;
-    background: url("../img/next.png") 50% 50% / 40px no-repeat;
-    right: 0;
-}*/
