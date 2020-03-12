@@ -10,6 +10,8 @@ var bolletje = document.getElementsByClassName('bol');
 var vorigeKnop = document.querySelector('.vorige');
 var volgendeKnop = document.querySelector('.volgende');
 
+
+
 var imageOne = true;
 var imageTwo = false;
 var imageThree = false;
@@ -20,6 +22,11 @@ var imageSix = false;
 // Hieronder worden de functies gemaakt waarin ik in een if statement zeg dat de image steeds een image verder kan als het true is.
 // Dus van 1 naar 2, 2 naar 3 etc..
 function volgendeBol() {
+    //    var huidigeBolletje = document.querySelector(".zwart").parentNode;
+    //    var nieuweBolletje = huidigeBolletje.nextSibling;
+    //    console.log(nieuweBolletje.href);
+    //    window.location = nieuweBolletje;
+
 
     if (imageOne === true) {
         event.preventDefault();
@@ -94,7 +101,6 @@ function vorigeBol() {
 }
 
 
-
 //Hieronder hang ik een oortje aan de vorige en volgende knop
 //die luistert naar clicks, zodat de daarbijbehorende functies kunnen worden getriggerd.
 vorigeKnop.addEventListener('click', vorigeBol);
@@ -111,5 +117,5 @@ for (i = 0; i < bolletje.length; i++) {
     function bolletjeZwart() {
         document.querySelector(".zwart").classList.remove("zwart");
         this.classList.add('zwart');
-
     }
+}

@@ -49,6 +49,7 @@ h1 {
 
 .carousel button {
     position: absolute;
+    cursor: pointer;
     width: 4rem;
     height: 4rem;
 
@@ -91,4 +92,11 @@ h1 {
 .zwart {
     background-color: rgb(245, 211, 65);
     color: rgb(245, 211, 65);
+}
+
+#arrowgif {
+    position: absolute;
+    width: 15em;
+    top: 10em;
+    left: 35em;
 }
