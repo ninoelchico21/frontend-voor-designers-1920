@@ -23,7 +23,6 @@ body {
 h1 {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-
     margin: 20px;
     font-size: 4rem;
     letter-spacing: 30px;
@@ -61,10 +60,8 @@ p {
     background: rgb(238, 62, 64);
     margin: 0;
     list-style: none;
-
     display: flex;
     flex-direction: row;
-
     overflow: scroll;
 }
 
@@ -90,11 +87,9 @@ p {
     cursor: pointer;
     width: 4rem;
     height: 4rem;
-
     top: calc(50% - 2em);
     font-size: 1em;
     background: rgb(1, 161, 219);
-
     border: none;
     border-radius: 50%;
 }
@@ -113,22 +108,30 @@ p {
     right: 1em;
 }
 
+
+
 /************************************************
                 NAVIGATIE BOLLETJES
 *************************************************/
 
+#navbolletjes {
+    display: flex;
+    justify-content: center;
+}
 
-.bol {
+#navbolletjes a {
+    display: block;
     width: 2rem;
     height: 2rem;
-    margin-left: 3px;
+    margin: 0 3px;
     background-color: white;
     border-radius: 50%;
 }
 
-#navbolletjes {
-    justify-content: center;
+#navbolletjes a.zwart {
+    background-color: black;
 }
+
 
 
 /************************************************
