@@ -36,10 +36,10 @@ h2 {
 }
 
 p {
-    font-family: ;
+    font-family: '', sans-serif;
     font-size: 1rem;
-    width: 30em;
-    /*    width: 20em;*/
+/*    width: 30em;*/
+        width: 20em;
 }
 
 
@@ -47,6 +47,7 @@ p {
 /************************************************
                 MOVIES CAROUSEL
 *************************************************/
+
 .carousel {
     position: relative;
     padding: 1em;
@@ -74,14 +75,16 @@ p {
 
 
 .carousel ul li img {
-    height: 55em;
-    /*    height: 30em;*/
+/*    height: 55em;*/
+        height: 30em;
 }
+
 
 
 /************************************************
                 CAROUSEL BUTTONS
 *************************************************/
+
 .carousel button {
     position: absolute;
     cursor: pointer;

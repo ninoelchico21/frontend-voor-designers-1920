@@ -4,24 +4,9 @@
 
 /*eslint 'no-console': 0*/
 
-
-// BLACK HEARTS, deze stap doe ik al laatste wanneer mijn carousel af is.
-//var blackHart = document.getElementsByClassName('blackhearts');
-//blackHart[0].addEventListener('click', blackheartClicked);
-//
-//// Hier zet ik de blackheart in een loop
-//for (i = 0; i < blackHart.length; i++) {
-//    blackHart[i].addEventListener('click', blackheartClicked);
-//}
-//
-//
-//// Deze functie toggled de classes .blackhearts en .redhart Deze kun je in css vinden.
-//// In a function, this refers to the global object.
-//function blackheartClicked() {
-//    console.log(this);
-//    this.classList.toggle('redhart');
-//}
-
+//BRONNEN:
+//SVG toevoegen met js: http://xahlee.info/js/js_scritping_svg_basics.html
+//Keyboard events: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
 
 
 
@@ -32,102 +17,6 @@ request.open('GET', requestURL);
 
 request.responseType = 'json';
 request.send();
-
-
-
-//  hieronder worden de classes van de carouselknoppen aangeroepen.
-var vorigeKnop = document.querySelector('.vorige');
-var volgendeKnop = document.querySelector('.volgende');
-
-
-var imageOne = true;
-var imageTwo = false;
-var imageThree = false;
-var imageFour = false;
-var imageFive = false;
-var imageSix = false;
-
-
-// Hieronder worden de functies gemaakt waarin ik in een if statement zeg dat de image steeds een image verder kan als het true is.
-// Dus van 1 naar 2, 2 naar 3 etc..
-function volgendeBol() {
-
-
-
-    if (imageOne === true) {
-        event.preventDefault();
-        document.getElementById("film2").click();
-        imageOne = false;
-        imageTwo = true;
-    } else if (imageTwo === true) {
-        event.preventDefault();
-        document.getElementById("film3").click();
-        imageTwo = false;
-        imageThree = true;
-    } else if (imageThree === true) {
-        event.preventDefault();
-        document.getElementById("film4").click();
-        imageThree = false;
-        imageFour = true;
-    } else if (imageFour === true) {
-        event.preventDefault();
-        document.getElementById("film5").click();
-        imageFour = false;
-        imageFive = true;
-    } else if (imageFive === true) {
-        event.preventDefault();
-        document.getElementById("film6").click();
-        imageFive = false;
-        imageSix = true;
-    } else if (imageSix === true) {
-        event.preventDefault();
-        document.getElementById("film1").click();
-        imageSix = false;
-        imageOne = true;
-    }
-}
-
-
-//In deze functie doe ik hetzelfde, alleen andersom nu.
-// Dus van 1 naar 6, 6 naar 5 etc..
-
-function vorigeBol() {
-
-    if (imageOne === true) {
-        event.preventDefault();
-        document.getElementById("film6").click();
-        imageOne = false;
-        imageSix = true;
-    } else if (imageTwo === true) {
-        event.preventDefault();
-        document.getElementById("film1").click();
-        imageTwo = false;
-        imageOne = true;
-    } else if (imageThree === true) {
-        event.preventDefault();
-        document.getElementById("film2").click();
-        imageThree = false;
-        imageTwo = true;
-    } else if (imageFour === true) {
-        event.preventDefault();
-        document.getElementById("film3").click();
-        imageFour = false;
-        imageThree = true;
-    } else if (imageFive === true) {
-        event.preventDefault();
-        document.getElementById("film4").click();
-        imageFive = false;
-        imageFour = true;
-    } else if (imageSix === true) {
-        event.preventDefault();
-        document.getElementById("film5").click();
-        imageSix = false;
-        imageFive = true;
-    }
-}
-
-
-
 
 
 
@@ -146,8 +35,6 @@ request.onload = function () {
 //  ..in mijnLijst wordt de ul in het html document opgezocht.
 //  in deBolletjes worden de id 'navbolletjes' in het html document opgezocht.
 function showMovies(jsonObj) {
-
-
     var movies = jsonObj;
     var mijnLijst = document.querySelector('ul');
     var deBolletjes = document.querySelector('#navbolletjes');
@@ -167,6 +54,19 @@ function showMovies(jsonObj) {
         var releaseDatumP = document.createElement('p');
         var plotTekst = document.createElement('p');
 
+        //      hieronder maak ik de svg aan
+        // Bron: http://xahlee.info/js/js_scritping_svg_basics.html
+        var heartSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+        heartSvg.setAttribute("width", "100");
+        heartSvg.setAttribute("height", "100");
+
+        var heartVorm = document.createElementNS('http://www.w3.org/2000/svg', 'heart')
+        heartVorm.setAttribute("fill", "red");
+
+        heartSvg.appendChild(heartVorm);
+
+
         //  In de html elementen worden vervolgens de data van het json document erin gegooid,...
         //  dus title bij h2, cover bij img etc..
         filmTitel.innerHTML = movies[i].title;
@@ -175,6 +75,7 @@ function showMovies(jsonObj) {
         releaseDatumP.innerHTML = 'Release Date: ';
         releaseDatumP.appendChild(releaseDatum);
         filmCover.src = movies[i].cover;
+        heartSvg.innerHTML = movies[i].svg;
 
         // de film (de li) een id geven
         liFilm.id = "film" + i;
@@ -182,56 +83,113 @@ function showMovies(jsonObj) {
         //  Die html elementen worden in li-tjes gezet...
         liFilm.appendChild(filmTitel);
         liFilm.appendChild(filmCover);
+        liFilm.appendChild(heartSvg);
         liFilm.appendChild(releaseDatumP);
         liFilm.appendChild(plotTekst);
 
         //  Tot slot worden de li-tjes in ul gezet, zodat er een carousel gemaakt kan worden.
         mijnLijst.appendChild(liFilm);
 
-        // Het navigatie bolletje voor de film aanmaken en toevoegen aan de bolletjes
+        // Het navigatie bolletje voor de film aanmaken
         var bolletje = document.createElement('a');
         bolletje.setAttribute("href", "#film" + i);
+
+
+        // de bolletjes zijn links
+        // om naar de nieuwe film te scrollen hoeft niets te gebeuren
+        // daar zorgt de link voor
+        // om het nieuwe bolletje zwart te maken moeten we wel wat doen
+        // om daar voor te zorgen doe ik het volgende
+        // in de loop maak ik voor elk bolletje ook een eventlistener aan
+        // daarmme wordt de functie bolletjeZwart aangeroepen
+        bolletje.addEventListener('click', function () {
+            var nieuweBolletje = this;
+            bolletjeZwart(nieuweBolletje);
+        });
+        // het bolletje toevoegen aan de lijst met bolletjes
         deBolletjes.appendChild(bolletje);
-
-
     }
 
     // Dan als de loop klaar is het eerste bolletje zwart maken
     deBolletjes.querySelector("a:first-of-type").classList.add("zwart");
+
+    // En tenslotte laten we de buttons luisteren naar clicks
+    // Ook dit doe ik na het aanmaken van de films.
+    // Op deze manier werken de knoppen nog niet als de films er nog niet zijn.
+    let vorigeKnop = document.querySelector('.vorige');
+    let volgendeKnop = document.querySelector('.volgende');
+
+    vorigeKnop.addEventListener('click', naarVorigeFilm);
+    volgendeKnop.addEventListener('click', naarVolgendeFilm);
+
+
+}
+/*****  EINDE FUNCTION SHOWMOVIES   *****/
+
+
+
+function bolletjeZwart(nieuweBolletje) {
+    // we zoeken het huidige bolletje op
+    // dat is het bolletje dat nu de class zwart heeft
+    var huidigeBolletje = document.querySelector(".zwart");
+    // we verwijderen class zwart van dat bolletje
+    huidigeBolletje.classList.remove("zwart");
+    // daarna voegen we class zwart toe aan het nieuwe bolletje
+    nieuweBolletje.classList.add('zwart');
+}
+
+
+function naarVolgendeFilm() {
+    // we zoeken wederom het huidige bolletje op
+    // dat is het bolletje dat nu de class zwart heeft
+    var huidigeBolletje = document.querySelector(".zwart");
+
+    // we zoeken het volgende bolletje op
+    // dat kan met de functie nextElementSibling
+    var nieuweBolletje = huidigeBolletje.nextElementSibling;
+
+    // als het laatste al actief was is er geen volgend bolletje
+    // dan heeft nieuweBolletje de waarde null
+    // als dat zo is doen we dit
+    if (nieuweBolletje === null) {
+        // we maken het eerste bolletje het nieuwe bolletje
+        // dat betekent dat de lijst weer naar de eerste film gaat
+        nieuweBolletje = document.querySelector("#navbolletjes a:first-child");
+    }
+
+    // dan laten we JS op het nieuwe bolletje klikken
+    nieuweBolletje.click();
+
+    // en dan moeten we zwart weer verplaatsen
+    bolletjeZwart(nieuweBolletje);
 }
 
 
 
-//  MISLUKTE CODE: BOLLETJE ZWART MAKEN BIJ CLICK
 
-//var navBolletje = document.querySelector('#film');
+function naarVorigeFilm() {
+    // zelfde als boven alleen dan de andere kant op
+    var huidigeBolletje = document.querySelector(".zwart");
+    var nieuweBolletje = huidigeBolletje.previousElementSibling;
+
+    if (nieuweBolletje === null) {
+        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
+    }
+
+    nieuweBolletje.click();
+    bolletjeZwart(nieuweBolletje);
+}
+
 //
-//for (i = 0; i < navBolletje.length; i++) {
-//
-//    navBolletje[i].addEventListener('click', bolletjeZwart);
-//
-//    function bolletjeZwart() {
-//        document.querySelector(".zwart").classList.remove("zwart");
-//        this.classList.add('zwart');
+////KEY EVENT BRON: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
+//document.addEventListener('keydown', function (e) {
+//    if (e.keyCode == 37) {
+//        var huidigeBolletje = document.querySelector(".zwart");
+//        var nieuweBolletje = huidigeBolletje.previousElementSibling;
+//        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
+//    } else if (e.keyCode == 39) {
+//        var huidigeBolletje = document.querySelector(".zwart");
+//        var nieuweBolletje = huidigeBolletje.nextElementSibling;
+//        nieuweBolletje = document.querySelector("#navbolletjes a:first-child");
 //    }
-//}
-
-
-
-
-
-
-//  ik heb de movies met cover en info in een carousel gezet,
-//  de volgende stap die ik wil nemen is, om de li-tjes een id te geven,
-//  zodat ik de navigatiebolletjes van de carousel ernaar kan linken.
-
-
-
-//  MISLUKTE CODE:
-
-//  Hieronder maak ik de variabele idToLi aan,
-//  zodat ik in de loop een id aan alle li-tjes kan geven.
-//  var idToLi = document.querySelector('li');
-
-//  Hier voeg ik aan alle li-tjes een id genaamd link toe
-//  idToLi.id = 'link'
+//});

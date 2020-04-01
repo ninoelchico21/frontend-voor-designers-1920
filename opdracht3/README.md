@@ -1,5 +1,96 @@
 # frontend voor designers - opdracht 3: Een interactie uitwerken met externe data
 
+**vraag 1 voor vrijdag 3 April:** Ik heb geprobeerd om een hartvormige svg in mijn document te krijgen. Ik heb het met .createElementNS gedaan, ik had eerst een cirkel proberen te maken eals test die ik op deze website had gevonden, maar ik krijg alleen een lege ruimte te zien in mijn html. Ik kan de svg nogsteeds niet zien zelfs als ik hem een kleur geef. Dit was mijn code:
+
+Gebruikte bron: http://xahlee.info/js/js_scritping_svg_basics.html
+
+//      hieronder maak ik de svg aan
+        var heartSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+        heartSvg.setAttribute("width", "100");
+        heartSvg.setAttribute("height", "100");
+
+        var heartVorm = document.createElementNS('http://www.w3.org/2000/svg', 'heart')
+        heartVorm.setAttribute("fill", "red");
+
+        heartSvg.appendChild(heartVorm);
+
+        heartSvg.innerHTML = movies[i].svg;
+
+
+**vraag 2 voor vrijdag 3 April:** Het andere wat ik had geprobeerd was het toevoegen van keyboard events. Ik heb meerdere codes geprobeerd maar het schiet niet echt op. Soms kon ik de films wel zien in mijn html en soms niet. Dit waren een paar van mijn codes:
+
+Gebruikte bron: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
+
+//POGING 1
+function naarVorigeFilm() {
+
+    var huidigeBolletje = document.querySelector(".zwart");
+    var nieuweBolletje = huidigeBolletje.previousElementSibling;
+    document.addEventListener('keydown', function (e));
+
+    if (nieuweBolletje === null) {
+        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
+    } else if (e.keyCode == 37) {
+        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
+    }
+
+    nieuweBolletje.click();
+    bolletjeZwart(nieuweBolletje);
+}
+
+
+//POGING 2
+document.addEventListener('keydown', function (e) {
+    if (e.keyCode == 37) {
+        var huidigeBolletje = document.querySelector(".zwart");
+        var nieuweBolletje = huidigeBolletje.previousElementSibling;
+        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
+    } else if (e.keyCode == 39) {
+        var huidigeBolletje = document.querySelector(".zwart");
+        var nieuweBolletje = huidigeBolletje.nextElementSibling;
+        nieuweBolletje = document.querySelector("#navbolletjes a:first-child");
+    }
+});
+
+
+
+## Schets idee:
+Mijn originele idee was om de vorige twee opdrachten te combineren: mijn filmlijst waarbij je films kan harten en "opslaan" en een fotocarousel. Het idee is om een carousel te maken met filmposters die je kan harten.
+
+![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht3/readmeimg/schetsen.jpg "schetsen")
+
+
+
+## Versie 1.0:
+In deze versie heb ik de films geplaatst en in een carousel geplaatst. Verder zijn er navigatiebolletjes toegevoegd en carouselknoppen.Tot slot is er data opgehaald uit een json bestand.
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie1a.png " Movie Carousel versie 1")
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie1b.png " Movie Carousel versie 1")
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie1c.png " Movie Carousel versie 1")
+
+
+
+## Versie 2.0:
+In deze versie is er geprobeerd om de navbolletjes zwart te maken wanneer er opdrukt wordt. Ook is er een poging gewaagd om de carousel buttons klikbaar te maken. Wat visueel is verandert is aan mijn website is dat de eerste bolletje zwart is gemaakt.
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie2.png " Movie Carousel versie 2")
+
+
+
+## Versie 3.0:
+
+
+
+
+
+
+
+
+
+=================================================
+ARCHIEF VAN VORIGE VRAGEN DIE AL BEANTWOORD ZIJN
+=================================================
 
 **vraag 1 voor donderdag 26maart:** Het linken van de navbuttons is gelukt (nogmaals bedankt), en ik ben nu bezig met het zwart maken van de navbutton wanneer er op geklikt wordt. Ik heb hierbij geprobeerd de code van mijn vorige opdracht over te nemen en een beetje aan te passen. Hier roep ik eerst met een andere variabele de id "film" aan en vervolgens maak ik een loopje aan waarin ik een clickevent aanmaak en een function aanroep. Ik snap niet wat ik verkeerd doe en de console zegt: *Uncaught TypeError: Cannot read property 'length' of null*. Kan je mij helpen?
 
@@ -129,24 +220,36 @@ function volgendeBol() {
 
 
 
-## Schets idee:
-Mijn originele idee was om de vorige twee opdrachten te combineren: mijn filmlijst waarbij je films kan harten en "opslaan" en een fotocarousel. Het idee is om een carousel te maken met filmposters die je kan harten.
+=================================================
+            ARCHIEF VAN MISLUKTE CODE
+=================================================
 
-![alt text](https://ninoelchico21.github.io/frontend-voor-designers-1920/opdracht3/readmeimg/schets.jpg "schetsen")
+//  MISLUKTE CODE: BOLLETJE ZWART MAKEN BIJ CLICK
+
+//var navBolletje = document.querySelector('#film');
+//
+//for (i = 0; i < navBolletje.length; i++) {
+//
+//    navBolletje[i].addEventListener('click', bolletjeZwart);
+//
+//    function bolletjeZwart() {
+//        document.querySelector(".zwart").classList.remove("zwart");
+//        this.classList.add('zwart');
+//    }
+//}
 
 
-
-## Versie 1.0:
-In deze versie heb ik de films geplaatst en in een carousel geplaatst. Verder zijn er navigatiebolletjes toegevoegd en carouselknoppen.Tot slot is er data opgehaald uit een json bestand.
-
-![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie1a.png " Movie Carousel versie 1")
-![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie1b.png " Movie Carousel versie 1")
-![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie1c.png " Movie Carousel versie 1")
+//  ik heb de movies met cover en info in een carousel gezet,
+//  de volgende stap die ik wil nemen is, om de li-tjes een id te geven,
+//  zodat ik de navigatiebolletjes van de carousel ernaar kan linken.
 
 
+//  MISLUKTE CODE: ID TOEVOEGEN AAN LI
 
-## Versie 2.0:
-In deze versie is er geprobeerd om de navbolletjes zwart te maken wanneer er opdrukt wordt. Ook is er een poging gewaagd om de carousel buttons klikbaar te maken. Wat visueel is verandert is aan mijn website is dat de eerste bolletje zwart is gemaakt.
+//  Hieronder maak ik de variabele idToLi aan,
+//  zodat ik in de loop een id aan alle li-tjes kan geven.
+//  var idToLi = document.querySelector('li');
 
-![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie2.png " Movie Carousel versie 2")
+//  Hier voeg ik aan alle li-tjes een id genaamd link toe
+//  idToLi.id = 'link'
 
