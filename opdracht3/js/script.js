@@ -4,13 +4,14 @@
 
 /*eslint 'no-console': 0*/
 
-//BRONNEN:
-//SVG toevoegen met js: http://xahlee.info/js/js_scritping_svg_basics.html
-//Keyboard events: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
+
+// BRONNEN:
+// SVG toevoegen met js: http://xahlee.info/js/js_scritping_svg_basics.html
+// Keyboard events: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
 
 
 
-//  hieronder wordt de link met data van de 6 films aangeroepen.
+// link met data van de 6 films aangeroepen.
 var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -20,8 +21,8 @@ request.send();
 
 
 
-//  Hieronder wordt bij het laden van de site de function showMovies getriggerd
-//  verder word de variabele movies in de console geshowed.
+// bij het laden van de site de function showMovies getriggerd
+// de variabele movies in de console geshowed.
 request.onload = function () {
     var movies = request.response;
     console.log(movies);
@@ -30,97 +31,122 @@ request.onload = function () {
 
 
 
-//  Hieronder wordt de functie 'showMovies' gerunt.
-//  In de function worden variabelen aangemaakt: movies, mijnLijst, deBolletjes...
-//  ..in mijnLijst wordt de ul in het html document opgezocht.
-//  in deBolletjes worden de id 'navbolletjes' in het html document opgezocht.
+// Hieronder wordt de functie 'showMovies' gerunt.
+// In de function worden variabelen aangemaakt: movies, mijnLijst, deBolletjes...
+// ..in mijnLijst wordt de ul in het html document opgezocht.
+// in deBolletjes worden de id 'navbolletjes' in het html document opgezocht.
 function showMovies(jsonObj) {
     var movies = jsonObj;
     var mijnLijst = document.querySelector('ul');
     var deBolletjes = document.querySelector('#navbolletjes');
-    //    var svg = document.querySelector('blackhearts');
 
 
-    //  vervolgens wordt er loop gemaakt in de function....
+    // vervolgens wordt er loop gemaakt in de function....
     for (let i = 0; i < movies.length; i++) {
 
         // de film aanmaken en toevoegen
         var liFilm = document.createElement('li');
 
-        //  In de loop worden variabelen gemaakt, waarin html elementen worden gemaakt....
+        // In de loop worden variabelen gemaakt, waarin html elementen worden gemaakt....
         var filmTitel = document.createElement('h2');
         var filmCover = document.createElement('img');
         var releaseDatum = document.createElement('date');
         var releaseDatumP = document.createElement('p');
         var plotTekst = document.createElement('p');
 
-        //      hieronder maak ik de svg aan
-        // Bron: http://xahlee.info/js/js_scritping_svg_basics.html
-        var heartSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 
-        heartSvg.setAttribute("width", "100");
-        heartSvg.setAttribute("height", "100");
-
-        var heartVorm = document.createElementNS('http://www.w3.org/2000/svg', 'heart')
-        heartVorm.setAttribute("fill", "red");
-
-        heartSvg.appendChild(heartVorm);
-
-
-        //  In de html elementen worden vervolgens de data van het json document erin gegooid,...
-        //  dus title bij h2, cover bij img etc..
+        // In de html elementen worden vervolgens de data van het json document erin gegooid,...
+        // dus title bij h2, cover bij img etc..
         filmTitel.innerHTML = movies[i].title;
         plotTekst.innerHTML = 'Plot: ' + movies[i].plot;
         releaseDatum.innerHTML = movies[i].release_date;
         releaseDatumP.innerHTML = 'Release Date: ';
         releaseDatumP.appendChild(releaseDatum);
         filmCover.src = movies[i].cover;
-        heartSvg.innerHTML = movies[i].svg;
+
 
         // de film (de li) een id geven
         liFilm.id = "film" + i;
-
-        //  Die html elementen worden in li-tjes gezet...
+        // die html elementen worden in li-tjes gezet...
         liFilm.appendChild(filmTitel);
         liFilm.appendChild(filmCover);
-        liFilm.appendChild(heartSvg);
         liFilm.appendChild(releaseDatumP);
         liFilm.appendChild(plotTekst);
 
-        //  Tot slot worden de li-tjes in ul gezet, zodat er een carousel gemaakt kan worden.
+
+        // buttom element aanmaken
+        var readMoreButton = document.createElement('button');
+        var readMore = document.createElement('span');
+
+
+        // svg element aanmaken
+        // bron: http://xahlee.info/js/js_scritping_svg_basics.html
+        var heartSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        heartSvg.setAttribute("viewBox", "0 0 99.2 99.2");
+
+        // vorm van het hartje aanmaken
+        var heartVorm = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        heartVorm.setAttribute("d", "M80.4,17.5c-11-5.1-24-1.3-30.5,8.8C43,14.9,28.1,11.2,16.7,18C5.8,24.6,1.9,38.2,7.6,49.5c5.3,11.6,42.2,40.7,42.3,40.7S86.6,61.1,92,49.5C97.5,37.5,92.3,23.3,80.4,17.5z");
+
+        // het hartje wordt in de svg gezet..
+        heartSvg.appendChild(heartVorm);
+
+        // eventlistener die class 'liked' toggled
+        heartSvg.addEventListener("click", function () {
+            this.parentNode.classList.toggle("liked");
+        });
+
+        // de hartvormige svg toevoegen aan de li.
+        liFilm.appendChild(heartSvg);
+
+
+        // de li-tjes worden in ul gezet, zodat er een carousel gemaakt kan worden.
         mijnLijst.appendChild(liFilm);
+
 
         // Het navigatie bolletje voor de film aanmaken
         var bolletje = document.createElement('a');
         bolletje.setAttribute("href", "#film" + i);
 
-
-        // de bolletjes zijn links
-        // om naar de nieuwe film te scrollen hoeft niets te gebeuren
-        // daar zorgt de link voor
-        // om het nieuwe bolletje zwart te maken moeten we wel wat doen
-        // om daar voor te zorgen doe ik het volgende
+        // de bolletjes zijn linkjes
+        // scrollen naar nieuwe link -> zorgt de link voor
+        // nieuwe bolletje zwart maken ->
         // in de loop maak ik voor elk bolletje ook een eventlistener aan
-        // daarmme wordt de functie bolletjeZwart aangeroepen
+        // daarmee wordt de functie bolletjeZwart aangeroepen
         bolletje.addEventListener('click', function () {
             var nieuweBolletje = this;
             bolletjeZwart(nieuweBolletje);
         });
+
         // het bolletje toevoegen aan de lijst met bolletjes
         deBolletjes.appendChild(bolletje);
     }
+    /*****  EINDE LOOP  *****/
+
 
     // Dan als de loop klaar is het eerste bolletje zwart maken
     deBolletjes.querySelector("a:first-of-type").classList.add("zwart");
 
     // En tenslotte laten we de buttons luisteren naar clicks
     // Ook dit doe ik na het aanmaken van de films.
-    // Op deze manier werken de knoppen nog niet als de films er nog niet zijn.
+    // Zo werken de knoppen nog niet als de films er nog niet zijn.
     let vorigeKnop = document.querySelector('.vorige');
     let volgendeKnop = document.querySelector('.volgende');
 
+    // functions aanroepen
     vorigeKnop.addEventListener('click', naarVorigeFilm);
     volgendeKnop.addEventListener('click', naarVolgendeFilm);
+
+
+    ////KEY EVENT BRON: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
+    // ik maak gebruik van dezelde functies als bij de buttons
+    document.addEventListener('keydown', function (e) {
+        if (e.key == "ArrowLeft") {
+            naarVorigeFilm();
+        } else if (e.key == "ArrowRight") {
+            naarVolgendeFilm();
+        }
+    });
 
 
 }
@@ -137,6 +163,7 @@ function bolletjeZwart(nieuweBolletje) {
     // daarna voegen we class zwart toe aan het nieuwe bolletje
     nieuweBolletje.classList.add('zwart');
 }
+
 
 
 function naarVolgendeFilm() {
@@ -166,7 +193,6 @@ function naarVolgendeFilm() {
 
 
 
-
 function naarVorigeFilm() {
     // zelfde als boven alleen dan de andere kant op
     var huidigeBolletje = document.querySelector(".zwart");
@@ -179,17 +205,3 @@ function naarVorigeFilm() {
     nieuweBolletje.click();
     bolletjeZwart(nieuweBolletje);
 }
-
-//
-////KEY EVENT BRON: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
-//document.addEventListener('keydown', function (e) {
-//    if (e.keyCode == 37) {
-//        var huidigeBolletje = document.querySelector(".zwart");
-//        var nieuweBolletje = huidigeBolletje.previousElementSibling;
-//        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
-//    } else if (e.keyCode == 39) {
-//        var huidigeBolletje = document.querySelector(".zwart");
-//        var nieuweBolletje = huidigeBolletje.nextElementSibling;
-//        nieuweBolletje = document.querySelector("#navbolletjes a:first-child");
-//    }
-//});

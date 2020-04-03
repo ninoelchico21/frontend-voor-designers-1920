@@ -1,57 +1,22 @@
 # frontend voor designers - opdracht 3: Een interactie uitwerken met externe data
 
-**vraag 1 voor vrijdag 3 April:** Ik heb geprobeerd om een hartvormige svg in mijn document te krijgen. Ik heb het met .createElementNS gedaan, ik had eerst een cirkel proberen te maken eals test die ik op deze website had gevonden, maar ik krijg alleen een lege ruimte te zien in mijn html. Ik kan de svg nogsteeds niet zien zelfs als ik hem een kleur geef. Dit was mijn code:
-
-Gebruikte bron: http://xahlee.info/js/js_scritping_svg_basics.html
-
-//      hieronder maak ik de svg aan
-        var heartSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-
-        heartSvg.setAttribute("width", "100");
-        heartSvg.setAttribute("height", "100");
-
-        var heartVorm = document.createElementNS('http://www.w3.org/2000/svg', 'heart')
-        heartVorm.setAttribute("fill", "red");
-
-        heartSvg.appendChild(heartVorm);
-
-        heartSvg.innerHTML = movies[i].svg;
+**Link naar website:** https://ninoelchico21.github.io/frontend-voor-designers-1920/
 
 
-**vraag 2 voor vrijdag 3 April:** Het andere wat ik had geprobeerd was het toevoegen van keyboard events. Ik heb meerdere codes geprobeerd maar het schiet niet echt op. Soms kon ik de films wel zien in mijn html en soms niet. Dit waren een paar van mijn codes:
-
-Gebruikte bron: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
-
-//POGING 1
-function naarVorigeFilm() {
-
-    var huidigeBolletje = document.querySelector(".zwart");
-    var nieuweBolletje = huidigeBolletje.previousElementSibling;
-    document.addEventListener('keydown', function (e));
-
-    if (nieuweBolletje === null) {
-        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
-    } else if (e.keyCode == 37) {
-        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
-    }
-
-    nieuweBolletje.click();
-    bolletjeZwart(nieuweBolletje);
-}
+kleine doelen voor mezelf:
+1. liked movies filteren: alle / gehartte
+2. tekst onder films: show more -> show less
+3. trailer invoegen (extra)
 
 
-//POGING 2
-document.addEventListener('keydown', function (e) {
-    if (e.keyCode == 37) {
-        var huidigeBolletje = document.querySelector(".zwart");
-        var nieuweBolletje = huidigeBolletje.previousElementSibling;
-        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
-    } else if (e.keyCode == 39) {
-        var huidigeBolletje = document.querySelector(".zwart");
-        var nieuweBolletje = huidigeBolletje.nextElementSibling;
-        nieuweBolletje = document.querySelector("#navbolletjes a:first-child");
-    }
-});
+
+**vraag 1 voor vrijdag 3 april:** Hoe filter ik op likes/alles? Ik had een kleine beginnetje gemaakt, maar weet alleen niet hoe ik moet beginnen.
+
+
+**vraag 2 voor vrijdag 3 april:** Hoe maak ik een read more button? Heb een tutorial gezien en het zag er best makkelijk uit, alleen het gaat lastig als de p tekst vanuit een json bestand is opgehaald en niet in de html staat. ik wil bij de plottekst zegmaar een 'show more'/'show less' button maken. Ik was begonnen met het maken van een button element en een span element, maar weet niet hoe ik verder moet. code:
+
+var readMoreButton = document.createElement('button');
+var readMore = document.createElement('span');
 
 
 
@@ -76,14 +41,16 @@ In deze versie is er geprobeerd om de navbolletjes zwart te maken wanneer er opd
 
 ![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie2.png " Movie Carousel versie 2")
 
+## Versie 2.1:
+In deze versie is de carousel klikbaar gemaakt en worden de nav bolletjes zwart wanneer erop geklikt word.
+
 
 
 ## Versie 3.0:
+In deze versie is er een klikbare heart button svg toegevoegd aan het document. De carousel kun je nu bedienen met toetsen. Verder is er en beginnetje gemaakt aan de filters. Er is nagedacht over een show more/show less button.
 
-
-
-
-
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie3a.png " Movie Carousel versie 3a")
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie3b.png " Movie Carousel versie 3b")
 
 
 
@@ -217,6 +184,65 @@ function volgendeBol() {
 //vorigeKnop.addEventListener('click', vorigeBol);
 //volgendeKnop.addEventListener('click', volgendeBol);
 -->
+
+
+____________________________________________________________________________________________________________
+
+
+**vraag 1 voor donderdag 2 April:** Ik heb geprobeerd om een hartvormige svg in mijn document te krijgen. Ik heb het met .createElementNS gedaan, ik had eerst een cirkel proberen te maken eals test die ik op deze website had gevonden, maar ik krijg alleen een lege ruimte te zien in mijn html. Ik kan de svg nogsteeds niet zien zelfs als ik hem een kleur geef. Dit was mijn code:
+
+Gebruikte bron: http://xahlee.info/js/js_scritping_svg_basics.html
+
+//      hieronder maak ik de svg aan
+        var heartSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+        heartSvg.setAttribute("width", "100");
+        heartSvg.setAttribute("height", "100");
+
+        var heartVorm = document.createElementNS('http://www.w3.org/2000/svg', 'heart')
+        heartVorm.setAttribute("fill", "red");
+
+        heartSvg.appendChild(heartVorm);
+
+        heartSvg.innerHTML = movies[i].svg;
+
+
+**vraag 2 voor donderdag 2 April:** Het andere wat ik had geprobeerd was het toevoegen van keyboard events. Ik heb meerdere codes geprobeerd maar het schiet niet echt op. Soms kon ik de films wel zien in mijn html en soms niet. Dit waren een paar van mijn codes:
+
+Gebruikte bron: https://stackoverflow.com/questions/45639000/adding-keyboard-navigation-to-a-slideshow
+
+//POGING 1
+function naarVorigeFilm() {
+
+    var huidigeBolletje = document.querySelector(".zwart");
+    var nieuweBolletje = huidigeBolletje.previousElementSibling;
+    document.addEventListener('keydown', function (e));
+
+    if (nieuweBolletje === null) {
+        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
+    } else if (e.keyCode == 37) {
+        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
+    }
+
+    nieuweBolletje.click();
+    bolletjeZwart(nieuweBolletje);
+}
+
+
+//POGING 2
+document.addEventListener('keydown', function (e) {
+    if (e.keyCode == 37) {
+        var huidigeBolletje = document.querySelector(".zwart");
+        var nieuweBolletje = huidigeBolletje.previousElementSibling;
+        nieuweBolletje = document.querySelector("#navbolletjes a:last-child");
+    } else if (e.keyCode == 39) {
+        var huidigeBolletje = document.querySelector(".zwart");
+        var nieuweBolletje = huidigeBolletje.nextElementSibling;
+        nieuweBolletje = document.querySelector("#navbolletjes a:first-child");
+    }
+});
+
+____________________________________________________________________________________________________________
 
 
 
