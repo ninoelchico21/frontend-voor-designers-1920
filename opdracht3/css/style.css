@@ -1,15 +1,23 @@
+BRONNEN:
+/*custom styling radio buttons: medestudent sebastiaan & eigen werk*/
+/*transitions: https: //css-tricks.com/ease-out-in-ease-in-out/*/
+/*transforms: https: //developer.mozilla.org/en-US/docs/Web/CSS/transform*/
+
 /************************************************
                     ALGEMEEN
 *************************************************/
-
-html {
-    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+* {
+    box-sizing: border-box;
+    /*margin en padding worden naar 0 gezet, zodat ik er zelf mee kan spelen*/
+    margin: 0;
+    padding: 0;
 }
 
+
 body {
-    /*    background image werkt niet?*/
-    /*    background-image: url("img/curtain.jpg");*/
-    margin: 0 auto 1em auto;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F3F4F1;
+    margin: 0;
     padding: 0;
     border-radius: 1em;
 }
@@ -22,31 +30,71 @@ body {
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    text-align: center;
-    margin: 20px;
+    margin: 10px 0 54px 14px;
     font-size: 4rem;
     letter-spacing: 30px;
+    width: 100%;
+    transition: .3s ease-in;
 }
 
+h1:hover {
+    text-shadow: 3px 3px rgb(1, 161, 219),
+        5px 5px rgb(238, 62, 64),
+        7px 7px rgb(245, 211, 65),
+        9px 9px #F3F4F1;
+    transition: .35s ease-out;
+}
 
 h2 {
-    font-family: '', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-family: 'roboto', sans-serif;
+    font-size: 1.28rem;
+    margin: 10px 0;
+    color: #F3F4F1;
 }
 
 p {
-    font-family: '', sans-serif;
+    font-family: 'roboto', sans-serif;
     font-size: 1rem;
-    /*    width: 30em;*/
-    width: 20em;
+    width: 17em;
+    margin-bottom: 10px;
+    color: #F3F4F1;
 }
 
+summary {
+    font-family: 'roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #F3F4F1;
+}
+
+#introtekst {
+    margin: 10px 0 30px 14px;
+    width: 80%;
+    color: black;
+    bottom: 542px;
+    position: absolute;
+}
 
 
 /************************************************
                 MOVIES CAROUSEL
 *************************************************/
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    width: 100%;
+}
+
+@media (max-width:800px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 .carousel {
     position: relative;
@@ -57,28 +105,46 @@ p {
 .carousel ul {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding: 1em;
-    background: rgb(238, 62, 64);
     margin: 0;
-    list-style: none;
+    padding: 0;
+    height: 483px;
+    background: rgb(238, 62, 64);
     display: flex;
     flex-direction: row;
+    list-style: none;
     overflow: scroll;
-}
 
+}
 
 .carousel > ul li {
-    position: relative;
     scroll-snap-align: center;
-    padding: 1em;
-    background-color: white;
+    position: relative;
+    padding: 0 1em;
+    background-color: var(--wit);
 }
-
 
 .carousel ul li img {
-    /*    height: 55em;*/
-    height: 30em;
+    height: 26em;
 }
+
+
+
+/************************************************
+                    FILTEREN
+*************************************************/
+
+/* met deze regel verberg je de films die niet geliked zijn */
+
+/* body[data-filters="liked"] --> als het attribuut data-filters van de body de waarde liked heeft */
+/* li --> zoeken we alle li's binnen de body op */
+/* li:not(.liked) --> maar dan wel alleen de li's die niet de class liked hebben */
+/* display:none; --> de geselecteerde li's verbergen we */
+
+body[data-filters="liked"] li:not(.liked) {
+    display: none;
+}
+
+/* als het data-filters de waarde all heeft hoeven we niets te doen - dan worden alle films getoond */
 
 
 
@@ -88,18 +154,25 @@ p {
 
 .carousel button {
     position: absolute;
-    cursor: pointer;
     width: 4rem;
     height: 4rem;
     top: calc(50% - 2em);
-    font-size: 1em;
+    font-size: 1.5em;
+    color: #F3F4F1;
     background: rgb(1, 161, 219);
     border: none;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .carousel button:focus {
     box-shadow: 0 0 .25em .25em white;
+    outline: none;
+}
+
+.carousel button:hover {
+    box-shadow: 0 0 .25em .25em white;
+    transition: .3s ease-out;
     outline: none;
 }
 
@@ -121,21 +194,22 @@ p {
 #navbolletjes {
     display: flex;
     justify-content: center;
+    margin-top: 9px;
+    padding-top: 4px;
 }
 
 #navbolletjes a {
     display: block;
-    width: 2rem;
-    height: 2rem;
+    width: 1.4rem;
+    height: 1.4rem;
     margin: 0 3px;
-    background-color: white;
+    background-color: #F3F4F1;
     border-radius: 50%;
 }
 
-#navbolletjes a.zwart {
-    background-color: black;
+#navbolletjes a.blauw {
+    background-color: rgb(1, 161, 219);
 }
-
 
 
 /************************************************
@@ -144,28 +218,37 @@ p {
 
 svg {
     position: absolute;
-    top: 4.5em;
-    right: 1em;
-    width: 5em;
-    height: 8em;
+    top: 2.5em;
+    right: 1.5em;
+    width: 4em;
+    height: 4em;
 }
+
+svg:hover {
+    width: 4.5em;
+    height: 4.5em;
+    transition: .3s ease-out;
+}
+
 
 path {
     fill: #FFFFFF88;
-    stroke: #000000;
+    stroke: black;
     stroke-width: 5;
     stroke-linejoin: round;
 }
 
-/* dit had ik even gedaan om te testen of de li de class liked hreeg */
+
+/* om te testen of de li de class liked kreeg */
+/*
 .carousel > ul li.liked {
     background-color: skyblue;
 }
+*/
 
 .liked path {
     fill: #FF000088;
 }
-
 
 
 /************************************************
@@ -173,22 +256,93 @@ path {
 *************************************************/
 
 .filters {
+    font-family: 'roboto', sans-serif;
     color: white;
-    background: green;
-    margin-top: 10 px;
-    padding: 10px;
-    width: 250px;
-    height: 85px;
+    background-color: rgb(238, 62, 64);
+    display: inline-block;
     border-radius: 10px;
+    margin: 14px;
+    padding: 15px 15px 5px 15px;
+    width: 200px;
+    height: 80px;
 }
 
 .filters h2 {
     margin: 0 0 20px 0;
 }
 
-.filters p {
-    align-content: center;
+
+
+/************************************************
+                RADIO BUTTONS
+*************************************************/
+
+/*huidige radio buttons verbergen*/
+input[type="radio"]:checked,
+input[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
 }
 
 
-[input type="radio"] {}
+/*label tekst een kleurtje geven*/
+input[type="radio"] + label {
+    color: #F3F4F1;
+}
+
+input[type="radio"]:checked + label {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+
+/*labels styling */
+input[type="radio"]:checked + label,
+input[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 30px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+/*custom styling radio rondje */
+/*bron/inspiratie: medestudent sebastiaan & eigen werk*/
+input[type="radio"]:checked + label:before,
+input[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #F3F4F1;
+    border-radius: 100%;
+}
+
+/*custom styling radio 'checked' rondje */
+/*bron: https: //css-tricks.com/ease-out-in-ease-in-out/*/
+input[type="radio"]:checked + label:after,
+input[type="radio"]:not(:checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background: rgb(1, 161, 219);
+    border-radius: 100%;
+    transition: .3s ease-out;
+}
+
+/*zorgen dat er maar 1 rondje checked is*/
+/*bron: https: //developer.mozilla.org/en-US/docs/Web/CSS/transform*/
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}

@@ -3,22 +3,6 @@
 **Link naar website:** https://ninoelchico21.github.io/frontend-voor-designers-1920/
 
 
-kleine doelen voor mezelf:
-1. liked movies filteren: alle / gehartte
-2. tekst onder films: show more -> show less
-3. trailer invoegen (extra)
-
-
-
-**vraag 1 voor vrijdag 3 april:** Hoe filter ik op likes/alles? Ik had een kleine beginnetje gemaakt, maar weet alleen niet hoe ik moet beginnen.
-
-
-**vraag 2 voor vrijdag 3 april:** Hoe maak ik een read more button? Heb een tutorial gezien en het zag er best makkelijk uit, alleen het gaat lastig als de p tekst vanuit een json bestand is opgehaald en niet in de html staat. ik wil bij de plottekst zegmaar een 'show more'/'show less' button maken. Ik was begonnen met het maken van een button element en een span element, maar weet niet hoe ik verder moet. code:
-
-var readMoreButton = document.createElement('button');
-var readMore = document.createElement('span');
-
-
 
 ## Schets idee:
 Mijn originele idee was om de vorige twee opdrachten te combineren: mijn filmlijst waarbij je films kan harten en "opslaan" en een fotocarousel. Het idee is om een carousel te maken met filmposters die je kan harten.
@@ -51,6 +35,12 @@ In deze versie is er een klikbare heart button svg toegevoegd aan het document. 
 
 ![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie3a.png " Movie Carousel versie 3a")
 ![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie3b.png " Movie Carousel versie 3b")
+
+
+## Final versie:
+In de final versie is er een filter toegepast, waarmee je de gehartte films kuunt filteren. Ook is er een 'show more' button toegevoegd in de carousel, zodat je de info van de films kunt bekijken. Verder lag de focus op de css. Kleuren, fonts, hovers, focus, transitions, van alles wat. In de titel van de website zit een coole textshadow bijvoorbeeld. Ik heb geprobeerd om alles zo goed mogelijk in beeld te krijgen. De navbuttons zijn nu altijd in beeld, maar om de 'show more' tekst te zien moet je helaas wel scorllen. Tot slot is de website een klein beetje responsive gemaakt.(de filters verschijnen onder de titel van de website wanneer je het venster verkleind.)
+
+
 
 
 
@@ -241,6 +231,17 @@ document.addEventListener('keydown', function (e) {
         nieuweBolletje = document.querySelector("#navbolletjes a:first-child");
     }
 });
+
+
+
+**vraag 1 voor vrijdag 3 april:** Hoe filter ik op likes/alles? Ik had een kleine beginnetje gemaakt, maar weet alleen niet hoe ik moet beginnen.
+
+
+**vraag 2 voor vrijdag 3 april:** Hoe maak ik een read more button? Heb een tutorial gezien en het zag er best makkelijk uit, alleen het gaat lastig als de p tekst vanuit een json bestand is opgehaald en niet in de html staat. ik wil bij de plottekst zegmaar een 'show more'/'show less' button maken. Ik was begonnen met het maken van een button element en een span element, maar weet niet hoe ik verder moet. code:
+
+var readMoreButton = document.createElement('button');
+var readMore = document.createElement('span');
+
 
 ____________________________________________________________________________________________________________
 
