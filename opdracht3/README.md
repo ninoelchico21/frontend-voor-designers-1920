@@ -1,4 +1,4 @@
-# frontend voor designers - opdracht 3: Een interactie uitwerken met externe data
+# Frontend voor designers - opdracht 3: Een interactie uitwerken met externe data
 
 **Link naar website:** https://ninoelchico21.github.io/frontend-voor-designers-1920/
 
@@ -66,7 +66,7 @@ In de final versie zijn de puntjes op de i gelegd. Er is geprobeerd om de site z
 
 =================================================
 ARCHIEF VAN VORIGE VRAGEN DIE AL BEANTWOORD ZIJN
-=================================================
+===========================================
 
 **vraag 1 voor donderdag 26maart:** Het linken van de navbuttons is gelukt (nogmaals bedankt), en ik ben nu bezig met het zwart maken van de navbutton wanneer er op geklikt wordt. Ik heb hierbij geprobeerd de code van mijn vorige opdracht over te nemen en een beetje aan te passen. Hier roep ik eerst met een andere variabele de id "film" aan en vervolgens maak ik een loopje aan waarin ik een clickevent aanmaak en een function aanroep. Ik snap niet wat ik verkeerd doe en de console zegt: *Uncaught TypeError: Cannot read property 'length' of null*. Kan je mij helpen?
 
@@ -262,13 +262,11 @@ var readMoreButton = document.createElement('button');
 var readMore = document.createElement('span');
 
 
-____________________________________________________________________________________________________________
-
 
 
 =================================================
             ARCHIEF VAN MISLUKTE CODE
-=================================================
+===========================================
 
 //  MISLUKTE CODE: BOLLETJE ZWART MAKEN BIJ CLICK
 
