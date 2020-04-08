@@ -174,6 +174,7 @@ function showMovies(jsonObj) {
     let allRadioButtonAll = document.body.querySelector("#all");
     let allRadioButtonLiked = document.body.querySelector("#liked");
 
+
     // de radio buttons laten luisteren naar het change event
     allRadioButtonAll.addEventListener("change", function () {
         // variabele aanmaken om het nieuwe filter in te stoppen
@@ -191,8 +192,8 @@ function showMovies(jsonObj) {
         document.body.setAttribute("data-filters", hetFilterWordt);
     });
 
-
 }
+
 /*****  EINDE FUNCTION SHOWMOVIES   *****/
 
 
@@ -246,4 +247,5 @@ function naarVorigeFilm() {
     }
 
     nieuweBolletje.click();
-    bolletjeBlauw(nieuweBolletje);}
+    bolletjeBlauw(nieuweBolletje);
+}

@@ -23,7 +23,6 @@ body {
 }
 
 
-
 /************************************************
                       TEKST
 *************************************************/
@@ -48,8 +47,15 @@ h1:hover {
 h2 {
     font-family: 'roboto', sans-serif;
     font-size: 1.28rem;
-    margin: 10px 0;
+    margin: 8px 0;
+    letter-spacing: px;
     color: #F3F4F1;
+}
+
+@media (max-width:800px) {
+    h2 {
+        font-size: 1rem;
+    }
 }
 
 p {
@@ -60,21 +66,39 @@ p {
     color: #F3F4F1;
 }
 
+@media (max-width:800px) {
+    p {
+        font-size: 0.8rem;
+    }
+}
+
 summary {
     font-family: 'roboto', sans-serif;
     font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.6px;
     color: #F3F4F1;
 }
 
+@media (max-width:800px) {
+    summary {
+        font-size: 1rem;
+    }
+}
+
 #introtekst {
-    margin: 10px 0 30px 14px;
+    margin: 10px 0 10px 14px;
     width: 80%;
     color: black;
     bottom: 542px;
     position: absolute;
 }
+
+@media (max-width:800px) {
+    #introtekst {
+        margin-top: 20px;
+    }
+}
+
 
 
 /************************************************
@@ -95,7 +119,6 @@ summary {
     }
 }
 
-
 .carousel {
     position: relative;
     padding: 1em;
@@ -113,20 +136,35 @@ summary {
     flex-direction: row;
     list-style: none;
     overflow: scroll;
+}
 
+@media (max-width:800px) {
+    .carousel ul {
+        height: 332px;
+    }
+}
+
+@media (max-height:645px) {
+    .carousel ul {
+        height: 439px;
+    }
 }
 
 .carousel > ul li {
     scroll-snap-align: center;
     position: relative;
     padding: 0 1em;
-    background-color: var(--wit);
 }
 
 .carousel ul li img {
     height: 26em;
 }
 
+@media (max-width:800px) {
+    .carousel ul li img {
+        height: 20em;
+    }
+}
 
 
 /************************************************
@@ -147,7 +185,6 @@ body[data-filters="liked"] li:not(.liked) {
 /* als het data-filters de waarde all heeft hoeven we niets te doen - dan worden alle films getoond */
 
 
-
 /************************************************
                 CAROUSEL BUTTONS
 *************************************************/
@@ -163,6 +200,13 @@ body[data-filters="liked"] li:not(.liked) {
     border: none;
     border-radius: 50%;
     cursor: pointer;
+}
+
+@media (max-width:800px) {
+    .carousel button {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
 }
 
 .carousel button:focus {
@@ -184,7 +228,6 @@ body[data-filters="liked"] li:not(.liked) {
 .carousel button.volgende {
     right: 1em;
 }
-
 
 
 /************************************************
@@ -224,12 +267,25 @@ svg {
     height: 4em;
 }
 
+@media (max-width:800px) {
+    svg {
+        width: 3em;
+        height: 3em;
+    }
+}
+
 svg:hover {
     width: 4.5em;
     height: 4.5em;
     transition: .3s ease-out;
 }
 
+@media (max-width:800px) {
+    svg:hover {
+        width: 3.5em;
+        height: 3.5em;
+    }
+}
 
 path {
     fill: #FFFFFF88;
@@ -237,7 +293,6 @@ path {
     stroke-width: 5;
     stroke-linejoin: round;
 }
-
 
 /* om te testen of de li de class liked kreeg */
 /*
@@ -272,7 +327,6 @@ path {
 }
 
 
-
 /************************************************
                 RADIO BUTTONS
 *************************************************/
@@ -294,7 +348,6 @@ input[type="radio"]:checked + label {
     font-weight: 600;
     letter-spacing: 1px;
 }
-
 
 
 /*labels styling */

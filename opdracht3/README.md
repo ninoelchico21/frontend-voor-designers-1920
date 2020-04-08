@@ -26,7 +26,7 @@ In deze versie is er geprobeerd om de navbolletjes zwart te maken wanneer er opd
 ![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie2.png " Movie Carousel versie 2")
 
 ## Versie 2.1:
-In deze versie is de carousel klikbaar gemaakt en worden de nav bolletjes zwart wanneer erop geklikt word.
+In deze versie is de carousel klikbaar gemaakt en worden de nav bolletjes zwart wanneer erop geklikt word. Dit is hetzelfde beeld als bij versie 2.0.
 
 
 
@@ -36,11 +36,30 @@ In deze versie is er een klikbare heart button svg toegevoegd aan het document. 
 ![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie3a.png " Movie Carousel versie 3a")
 ![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie3b.png " Movie Carousel versie 3b")
 
+## Versie 3.1:
+In deze versie is er een filter toegepast, waarmee je de gehartte films kuunt filteren. Ook is er een 'show more' button toegevoegd in de carousel, zodat je de info van de films kunt bekijken. Verder lag de focus op de css. Kleuren, fonts, hovers, focus, transitions, van alles wat. In de titel van de website zit een coole textshadow bijvoorbeeld. Ik heb geprobeerd om alles zo goed mogelijk in beeld te krijgen. De navbuttons zijn nu altijd in beeld, maar om de 'show more' tekst te zien moet je helaas wel scrollen. Tot slot is de website een klein beetje responsive gemaakt.(de filters verschijnen onder de titel van de website wanneer je het venster verkleind.)
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie31a.png " Movie Carousel versie 31a")
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/versie31b.png " Movie Carousel versie 31b")
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/filter.png "filter")
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/showmore.png "show more knop")
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/boxshadow.png "box-shadow titel")
+
+
 
 ## Final versie:
-In de final versie is er een filter toegepast, waarmee je de gehartte films kuunt filteren. Ook is er een 'show more' button toegevoegd in de carousel, zodat je de info van de films kunt bekijken. Verder lag de focus op de css. Kleuren, fonts, hovers, focus, transitions, van alles wat. In de titel van de website zit een coole textshadow bijvoorbeeld. Ik heb geprobeerd om alles zo goed mogelijk in beeld te krijgen. De navbuttons zijn nu altijd in beeld, maar om de 'show more' tekst te zien moet je helaas wel scorllen. Tot slot is de website een klein beetje responsive gemaakt.(de filters verschijnen onder de titel van de website wanneer je het venster verkleind.)
+In de final versie zijn de puntjes op de i gelegd. Er is geprobeerd om de site zo responsive mogelijk te krijgen. Font-sizes, margins en paddings zijn aangepast, zodat alles in het scherm past. Er is nagedacht over een melding wanneer de carousel leeg is gefilterd. Helaas was dit niet gelukt. Het lastige was het kijken of de ul leeg was wanneer erop gefilterd werd.
 
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/finalversiea.png " Final versie movie")
 
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/responsive1.png " responsive website")
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/responsive2.png " responsive website extra balk")
+
+![alt text](https://raw.githubusercontent.com/ninoelchico21/frontend-voor-designers-1920/master/opdracht3/readmeimg/responsive3.png " responsive website klein")
 
 
 
@@ -280,3 +299,33 @@ ________________________________________________________________________________
 //  Hier voeg ik aan alle li-tjes een id genaamd link toe
 //  idToLi.id = 'link'
 
+
+//  MISLUKTE CODE JS/CSS: EMPTY STATE TOEVOEGEN AAN LEGE CAROUSEL
+
+  var ulSelector = document.querySelector(".items");
+    let numberOfItemsInAll = allRadioButtonAll.length
+
+    if (allRadioButtonAll.length = 0) {
+        ulSelector.classList.add(".emptystate");
+    }
+
+    .emptystate {
+    background-color: aqua;
+}
+
+
+
+
+//  MISLUKTE CODE CSS: kleur variabelen
+Wat ook niet lukte was het gebruiken van kleur variabelen in css.
+Het leek erg handig, maar het werkte op een of andere reden niet.
+html {
+    --blauw: rgb(1, 128, 189);
+    --groen: #449244;
+    --rood: rgb(238, 62, 64);
+    --geel: rgb(245, 211, 65);
+}
+
+h2 {
+    background-color: var (--blauw);
+}
